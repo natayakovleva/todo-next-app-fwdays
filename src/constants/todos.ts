@@ -5,3 +5,15 @@ export enum Priority {
   P3 = "P3",
   P4 = "P4",
 }
+
+export enum SortBy {
+  PRIORITY = "priority",
+  DUE_DATE = "due_date",
+  TITLE = "title",
+}
+
+export enum Status {
+  ALL = 'all',
+  COMPLETED = 'completed',
+  IN_PROGRESS = 'in_progress',
+}

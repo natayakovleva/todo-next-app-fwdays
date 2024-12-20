@@ -1,13 +1,14 @@
 import TodosActions from "@/components/todo/TodosActions";
-
+import Link from "next/link";
 
 
 export default async function Todos(props: { searchParams: Promise<any> }) {
-  const searchParams = await props.searchParams;
+  // const searchParams = await props.searchParams;
   return (
-    <div className="m-7">
+    <section className="m-7">
       <TodosActions></TodosActions>
-    </div>
+      <Link href='/todos/create'>Create a new todo</Link>
+    </section>
     
   )
 }
