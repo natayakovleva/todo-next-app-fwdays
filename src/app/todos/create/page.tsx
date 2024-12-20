@@ -4,6 +4,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {TodosForm} from '@/components/todo/TodosForm'
 
 export default function CreateTodo() {
   return (
@@ -12,7 +13,7 @@ export default function CreateTodo() {
       <CardTitle>Add new todo</CardTitle>
     </CardHeader>
     <CardContent>
-      {/* <TodosForm /> */}
+      <TodosForm />
     </CardContent>
   </Card>
   )
