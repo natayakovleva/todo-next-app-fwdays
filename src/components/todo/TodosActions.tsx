@@ -3,7 +3,6 @@
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -25,12 +24,12 @@ import { Priority, Status, SortBy } from "@/constants/todos";
 import { Button } from "@/components/ui/button"
 
 function TodosActions() {
-  // const router = useRouter();
+  const router = useRouter();
 
 
-  // const handleReset = () => {
-  //   router.push("/todos");
-  // };
+  const handleReset = () => {
+    router.push("/todos");
+  };
 
   return (
     <section className="p-7">
@@ -88,7 +87,7 @@ function TodosActions() {
           </CardContent>
           <CardFooter>
             <Button type="button" 
-            // onClick={handleReset}
+            onClick={handleReset}
             >
               Reset
             </Button>
