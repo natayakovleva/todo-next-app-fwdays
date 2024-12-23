@@ -1,4 +1,5 @@
 "use client";
+
 import { Todo } from "@/types/todo";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
@@ -14,7 +15,7 @@ import {
 import { Priority } from "@/constants/todos";
 import { Button } from "../ui/button";
 
-import addTodo from "@/app/todos/actions/addTodo";
+import addTodo from "@/app/todos/actions/addTodos";
 // import updateTodo from "@/app/todos/actions/updateTodo";
 
 type Props = {

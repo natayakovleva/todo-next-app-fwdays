@@ -10,6 +10,7 @@ export default async function addTodo(formData: FormData) {
   const cookieStore = await cookies();
   const supabase = createClient(cookieStore);
 
+  
   const todoData = {
     title: formData.get('title')?.toString() || "",
     description: formData.get('description')?.toString() || "",
@@ -20,7 +21,9 @@ export default async function addTodo(formData: FormData) {
     completed: Boolean(formData.get('completed')),
   };
 
+
   const { error } = await supabase.from('todos').insert([todoData]);
+
 
   if (error) {
     throw new Error(`Failed to insert todo: ${error.message}`);

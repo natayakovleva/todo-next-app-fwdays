@@ -5,17 +5,29 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 
-export async function TodosList() {
+import { getTodos } from '@/app/todos/actions/getTodos'
+
+
+export async function TodosList({ searchParams }: { searchParams: any }) {
+
+  const { data: todos } = await getTodos(searchParams);
+
+  if(!todos?.length){
+    return null;
+  }
+
   return (
     <section>
       <div>
         <Accordion type="single" collapsible>
-          <AccordionItem value="item-1">
+          {todos?.map((todo) => (
+            <AccordionItem value={todo.id}>
             <AccordionTrigger>Is it accessible?</AccordionTrigger>
             <AccordionContent>
               Yes. It adheres to the WAI-ARIA design pattern.
             </AccordionContent>
           </AccordionItem>
+          ))} 
         </Accordion>
       </div>
     </section>
