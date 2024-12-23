@@ -25,7 +25,8 @@ type Props = {
 
 export const TodosForm: React.FC<Props> = ({ todo, isUpdateTodo = false }) => {
   return (
-    <form action={isUpdateTodo ? updateTodo : addTodo}>
+    // <form action={isUpdateTodo ? updateTodo : addTodo}>
+    <form action={ addTodo}>
       <input type="hidden" name="id" value={todo?.id} />
 
       <div>
