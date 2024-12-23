@@ -16,7 +16,7 @@ import { Priority } from "@/constants/todos";
 import { Button } from "../ui/button";
 
 import addTodo from "@/app/todos/actions/addTodos";
-// import updateTodo from "@/app/todos/actions/updateTodo";
+import updateTodo from "@/app/todos/actions/updateTodo";
 
 type Props = {
   isUpdateTodo?: boolean;
@@ -25,8 +25,7 @@ type Props = {
 
 export const TodosForm: React.FC<Props> = ({ todo, isUpdateTodo = false }) => {
   return (
-    // <form action={isUpdateTodo ? updateTodo : addTodo}>
-    <form action={ addTodo}>
+    <form action={isUpdateTodo ? updateTodo : addTodo}>
       <input type="hidden" name="id" value={todo?.id} />
 
       <div>
