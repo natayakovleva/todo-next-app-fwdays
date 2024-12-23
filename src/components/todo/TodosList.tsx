@@ -11,9 +11,9 @@ import { Button } from "@/components/ui/button";
 import { TodosForm } from "@/components/todo/TodosForm";
 
 export async function TodosList({ searchParams }: { searchParams: any }) {
+
   const { data: todos } = await getTodos(searchParams);
 
-  
   if(!todos?.length){
     return null;
   }
