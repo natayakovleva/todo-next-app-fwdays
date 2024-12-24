@@ -68,7 +68,6 @@ export const TodosForm: React.FC<Props> = ({ todo, isUpdateTodo = false }) => {
       id="due_date"
       type="date"
       required
-      // defaultValue={todo?.due_date}
       defaultValue={formattedDueDate}
       className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-500"
     />

@@ -27,8 +27,11 @@ export async function getTodos(searchParams: any): Promise<{ data: Todo[] }> {
   }
 
   const dueDate = getDueDate(searchParams.due_date);
+
   if (dueDate) {
-    const formattedDate = formatDate(dueDate);
+    // const formattedDate = formatDate(dueDate);
+    const formattedDate = new Date(formatDate(dueDate)).toISOString();
+
     query = query.eq("due_date", formattedDate);
   }
 
@@ -42,8 +45,6 @@ export async function getTodos(searchParams: any): Promise<{ data: Todo[] }> {
 }
 
 const getSortBy = (sortBy: SortBy): SortBy => {
-
-  console.log(`Sorting by: ${sortBy}`);
   switch (sortBy) {
     case SortBy.PRIORITY:
       return SortBy.PRIORITY;
@@ -52,8 +53,6 @@ const getSortBy = (sortBy: SortBy): SortBy => {
     default:
       return SortBy.TITLE;
   }
-
-  
 };
 
 const getPriority = (priority: Priority): Priority => {
