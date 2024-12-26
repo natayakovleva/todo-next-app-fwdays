@@ -11,7 +11,8 @@ import { TodosForm } from "@/components/todo/TodosForm";
 import { Priority } from "@/constants/todos";
 
 
-export async function TodosList({ searchParams }: { searchParams: any }) {
+// export async function TodosList({ searchParams }: { searchParams: any }) {
+  export async function TodosList({ searchParams }: { searchParams: unknown }) {
   const { data: todos } = await getTodos(searchParams);
 
   if (!todos?.length) {

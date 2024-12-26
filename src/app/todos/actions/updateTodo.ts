@@ -27,7 +27,8 @@ export default async function updateTodo(formData: FormData) {
     completed: Boolean(formData.get("completed")),
   };
 
-  const { data, error } = await supabase
+  // const { data, error } = await supabase
+  const { error } = await supabase
     .from("todos")
     .update(todoData)
     .eq("id", todoId);

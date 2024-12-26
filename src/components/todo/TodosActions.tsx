@@ -20,7 +20,8 @@ import { Input } from "../ui/input";
 import { Priority, SortBy, Status } from "@/constants/todos";
 
 
-export function TodosActions({ searchParams }: any) {
+// export function TodosActions({ searchParams }: any) {
+  export function TodosActions({ searchParams }: { searchParams: unknown }) {
   
   return (
     <section className="p-6 bg-gray-50 sm:p-8 md:p-12">
@@ -32,7 +33,7 @@ export function TodosActions({ searchParams }: any) {
     </CardHeader>
     <form>
       <CardContent className="px-6 py-4 space-y-6">
-        {/* Due Date */}
+
         <div>
           <Label htmlFor="due_date" className="block text-sm font-medium text-gray-700">
             Due date
@@ -47,7 +48,6 @@ export function TodosActions({ searchParams }: any) {
           />
         </div>
 
-        {/* Priority */}
         <div>
           <Label htmlFor="priority" className="block text-sm font-medium text-gray-700">
             Priority
@@ -69,7 +69,6 @@ export function TodosActions({ searchParams }: any) {
           </Select>
         </div>
 
-        {/* Completion Status */}
         <div>
           <Label htmlFor="completed" className="block text-sm font-medium text-gray-700">
             Completion status
@@ -89,7 +88,6 @@ export function TodosActions({ searchParams }: any) {
           </Select>
         </div>
 
-        {/* Sort By */}
         <div>
           <Label htmlFor="sortBy" className="block text-sm font-medium text-gray-700">
             Sort by

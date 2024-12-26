@@ -2,7 +2,7 @@ import TodosActions from "@/components/todo/TodosActions";
 import Link from "next/link";
 import { TodosList } from '@/components/todo/TodosList';
 
-export default async function Todos(props: { searchParams: Promise<any> }) {
+export default async function Todos(props: { searchParams: Promise<unknown> }) {
   const searchParams = await props.searchParams;
   return (
     <section className="m-7">
