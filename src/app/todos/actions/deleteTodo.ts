@@ -17,7 +17,8 @@ export default async function deleteTodo(formData: FormData) {
     return;
   }
 
-  const { data, error } = await supabase
+  // const { data, error } = await supabase
+  const { error } = await supabase
     .from("todos")
     .delete()
     .eq("id", todoId);

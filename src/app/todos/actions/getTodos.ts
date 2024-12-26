@@ -5,7 +5,8 @@ import { Todo } from "@/types/todo";
 import { cookies } from "next/headers";
 import { Priority, SortBy, Status } from "@/constants/todos";
 
-export async function getTodos(searchParams: any): Promise<{ data: Todo[] }> {
+// export async function getTodos(searchParams: any): Promise<{ data: Todo[] }> {
+  export async function getTodos(searchParams: unknown): Promise<{ data: Todo[] }> {
   const cookieStore = await cookies();
   const supabase = createClient(cookieStore);
 
